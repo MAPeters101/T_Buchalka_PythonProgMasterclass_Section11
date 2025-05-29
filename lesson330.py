@@ -30,5 +30,13 @@ button3.grid(row=2, column=0)
 mainWindow.columnconfigure(0, weight=1)
 mainWindow.columnconfigure(1, weight=1)
 mainWindow.grid_columnconfigure(2, weight=1)
+
+leftFrame.config(relief='sunken', borderwidth=1)
+rightFrame.config(relief='sunken', borderwidth=1)
+leftFrame.grid(sticky='ns')
+rightFrame.grid(sticky='new')
+
+rightFrame.columnconfigure(0, weight=1)
+button2.grid(sticky='ew')
 mainWindow.mainloop()
 
