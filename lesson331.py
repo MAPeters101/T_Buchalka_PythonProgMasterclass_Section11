@@ -30,6 +30,24 @@ fileList.config(border=2, relief='sunken')
 for zone in os.listdir('c:/Windows/System32'):
     fileList.insert(tkinter.END, zone)
 
+listScroll = tkinter.Scrollbar(mainWindow, orient=tkinter.VERTICAL, command=fileList.yview)
+listScroll.grid(row=1, column=1, sticky='nsw', rowspan=2)
+fileList['yscrollcommand'] = listScroll.set
+
+# frame for the radio buttons
+optionFrame = tkinter.LabelFrame(mainWindow, text="File Details")
+optionFrame.grid(row=1, column=2, sticky='ne')
+
+rbValue = tkinter.IntVar()
+rbValue.set(3)
+# Radio buttons
+radio1 = tkinter.Radiobutton(optionFrame, text="Filename", value=1, variable=rbValue)
+radio2 = tkinter.Radiobutton(optionFrame, text="Path", value=2, variable=rbValue)
+radio3 = tkinter.Radiobutton(optionFrame, text="Timestamp", value=3, variable=rbValue)
+radio1.grid(row=0, column=0, sticky='w')
+radio2.grid(row=1, column=0, sticky='w')
+radio3.grid(row=2, column=0, sticky='w')
 
 mainWindow.mainloop()
 
+print(rbValue.get())
