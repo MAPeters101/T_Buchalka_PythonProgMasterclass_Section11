@@ -54,5 +54,10 @@ for keyRow in keys:
         col += key[1]
     row += 1
 
+mainWindow.update()
+mainWindow.minsize(keyPad.winfo_width() + mainWindowPadding*2, result.winfo_height() + keyPad.winfo_height())
+mainWindow.maxsize(keyPad.winfo_width() + 50 + mainWindowPadding, result.winfo_height() + 50 + keyPad.winfo_height())
+
+
 mainWindow.mainloop()
 
